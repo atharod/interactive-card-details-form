@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Space+Grotesk:thin,extra-light,light,300,400,500,600,700,900" rel="stylesheet">
+  <title>Frontend Mentor | Interactive card details form</title>
+
+</head>
+<body>
+
+  <div class="panels">
+    <div class="panel" id="left-panel">
+
+    </div>
+
+    <div class="panel" id="right-panel">
+
+      <div class="infos" id="infos">
+        
+        <div class="name-container container">
+          <label for="name" class="label-title">Cardholder Name</label>
+          <input type="text" name="name" id="name" placeholder="e.g. Jane Appleseed" maxlength="30" onfocus="changeBorderFocus(this)" onblur="changeBorderBlur(this)" >
+          <label for="name" class="error error-padding format-flex" id="name"> Can't be blank</label>
+        </div>
+
+        <div class="card-number-container container">
+          <label for="card-number" class="label-title">Card Number</label>
+          <input type="text" name="card-number" id="card-number" placeholder="e.g. 1234 5678 9123 0000" maxlength="19" onfocus="changeBorderFocus(this)" onblur="changeBorderBlur(this)">
+          <label for="card-number" class="error error-padding" id="card-number"> Can't be blank</label>
+          <label for="card-number" class="error-padding error-number format-flex" id="card-number-wrong-format"> Wrong format, numbers only</label>
+        </div>
+
+        <div class="CVC-date container">
+          <div class="date-container container">
+            <label for="month" class="label-title">Exp. Date (MM/YY)</label>
+            <div class="inputs">
+              <div class="month-container">
+                <input type="text" name="month" id="month" placeholder="MM" maxlength="2" onfocus="changeBorderFocus(this)" onblur="changeBorderBlur(this)">
+                <label for="month" class="error error-date" id="month"> Can't be blank</label>
+                <label for="card-number" class="error-padding error-number format-flex" id="month-wrong-format"> Wrong format, numbers only</label>
+              </div>
+              <div class="year-container">
+                <input type="text" name="year" id="year" placeholder="YY" maxlength="2" onfocus="changeBorderFocus(this)" onblur="changeBorderBlur(this)">
+                <label for="year" class="error error-date" id="year"> Can't be blank</label>
+                <label for="card-number" class="error-padding error-number format-flex" id="year-wrong-format"> Wrong format, numbers only</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="CVC-container container">
+            <label for="CVC" class="label-title">CVC</label>
+            <input type="text" name="CVC" id="CVC" placeholder="e.g. 123" maxlength="3" onfocus="changeBorderFocus(this)" onblur="changeBorderBlur(this)">
+            <label for="CVC" class="error error-CVC" id="CVC"> Can't be blank</label>
+            <label for="card-number" class="error-padding error-number format-flex" id="CVC-wrong-format"> Wrong format, numbers only</label>
+          </div>
+        </div>
+
+        <div class="name-container container button-container">
+          <button id="confirm-button"> Confirm </button>
+        </div>
+        
+      </div>
+
+      <div class="completed-form" id="completed">
+
+        <div class="icon-completed completed">
+          <img src="images/icon-complete.svg" alt="icon-complete">
+        </div>
+
+        <div class="title-container completed">
+          <h1 class="title-completed">
+            Thank you!
+          </h1>
+        </div>
+
+        <div class="title-container completed">
+          <p class="para-completed">
+            We've added your card details
+          </p>
+        </div>
+
+        <div class="button-container-completed button-container completed" id="continue-button">
+          <button>Continue</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="front-card card">
+    
+      <div class="logos-card">
+        <div class="logo-card" id="white-round"></div>
+          <img src="images/card-logo.svg" alt="card-logo">
+        <div class="logo-card" id="empty-round"></div>
+      </div>
+  
+      <div class="card-infos">
+        <div class="card-nums" >
+          <p class="card-para toerase" id="card-num-front">0000 0000 0000 0000</p>
+        </div>
+  
+        <div class="card-footer">
+  
+          <div class="card-name">
+            <p class="card-para toerase" id="card-name">Jane Appleseed</p>
+          </div>
+  
+          <div class="card-date">
+            <p class="card-para toerase" id="date-back">00/00</p>
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+    <div class="back-card card">
+      <div class="CVC-back" id="CVC-back">
+        <p class="card-para toerase" id="fuckoff">000</p>
+      </div>
+    </div>
+
+  </div>
+  
+
+
+
+  <script src="index.js"></script>
+
+</body>
+</html>

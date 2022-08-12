@@ -1,0 +1,428 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+:root {
+    --red:hsl(0, 100%, 66%);
+    --white: hsl(0, 0%, 100%);
+    --light-violet: hsl(270, 3%, 87%);
+    --mid-violet: hsl(279, 6%, 55%);
+    --dark-violet: hsl(278, 68%, 11%);
+
+    --grad-1: hsl(249, 99%, 64%);
+    --grad-2: hsl(278, 94%, 30%);
+}
+
+body, html{
+    font-size: 18px;
+    color: var(--dark-violet);
+    font-family: "Space Grotesk";
+    font-weight: 500;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+.panels {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.panels #left-panel {
+    width: 30%;
+    height: 100%;
+    background: url("images/bg-main-desktop.png");
+    background-size: cover;
+}
+
+.panels #right-panel {
+    display: flex;
+    width: 70%;
+    margin: 0;
+}
+
+.panels #right-panel .infos {
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 400px;
+    width: 40%;
+    margin-left: 30%;
+}
+
+.panels .container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.panels .infos .CVC-date {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+}
+
+.panels .date-container, .CVC-container {
+    width: 50%;
+    max-width: 50%;
+    height: 100%;
+    margin-top: 10%;
+}
+
+.panels .CVC-date .date-container {
+    width: 100%;
+}
+
+.panels .CVC-date .date-container .inputs {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.panels .infos .card-number-container, .name-container, .name-container {
+    width: 100%;
+    margin-top: 10%;
+}
+
+
+.panels .container .label-title {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.container input {
+    height: 40px;
+    width: 100%;
+    border: 1px solid;
+    border-color: var(--light-violet);
+    border-radius: 7px;
+    font-size: 18.5px;
+    outline: none;
+
+}
+
+.container input::placeholder {
+    color: var(--light-violet);
+    padding-left: 15px;
+}
+
+.container input:focus::placeholder {
+    color: transparent;
+}
+
+#right-panel .infos .CVC-date .inputs #year {
+    margin-left: 5%;
+}
+
+#right-panel .infos .CVC-date .CVC-container {
+    margin-left: 5%;
+}
+
+
+button {
+    height: 50px;
+    font-size: 18.5px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: var(--white);
+    border: none;
+    background-color: var(--dark-violet);
+}
+
+
+/* Errors handler */
+
+.error, .error-number, .format-flex {
+    color: var(--red);
+    font-size: 10px;
+    display: none;
+}
+
+.error-padding {
+    margin-top: 2.5%;
+}
+
+.error-date {
+    margin-top: 10%;
+}
+
+.error-CVC {
+    margin-top: 5%;
+}
+
+/* completed form */
+.panels .panel .completed-form {
+    display: none;    
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 400px;
+    width: 40%;
+    margin-left: 30%;
+}
+
+.panels .panel .completed-form .completed {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    flex-direction: column;
+}
+
+.panels .panel .completed-form .icon-completed img{
+    width: 20%;
+    margin-bottom: 10%;
+}
+
+.panels .panel .completed-form h1 {
+    display: flex;
+    text-transform: uppercase;
+    height: 100%;
+    margin-bottom: 3%;
+}
+
+.panels .panel .completed-form p {
+    color: var(--mid-violet);
+    font-weight: 500;
+    margin-bottom: 10%;
+}
+
+.panels .panel .completed-form .button-container {
+    width: 100%;
+}
+
+.panels .panel .completed-form .button-container button {
+    width: 100%;
+}
+
+/* Cards settings*/
+
+.cards {
+    position: relative;
+    display: hidden;
+    flex-direction: column;
+    bottom: 80%;
+    left: 4%;
+    width: 40%;
+    height: 50%;
+}
+
+
+.front-card {
+    background-image: url("images/bg-card-front.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    display:flex;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    color : var(--white);
+    font-weight: 500;
+    padding: 3%;
+    margin-bottom: 10%;
+}
+
+.front-card .logos-card {
+    margin-bottom: 15%;
+    width: 100%;
+}
+
+.front-card .logos-card img{
+    width: 20%;
+    height: auto;
+}
+
+.front-card .card-infos .card-nums {
+    font-weight: 500;
+    font-size: 1.9vw;
+    letter-spacing: 10%;
+}
+
+.front-card .card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 1vw;
+    text-transform: uppercase;
+    letter-spacing: 0%;
+    margin-top: 10%;
+}
+
+.back-card {
+    background-image: url("images/bg-card-back.png") ;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 85%;
+    display: flex;
+    margin-left: 15%;
+}
+
+.back-card .CVC-back {
+    display: flex;
+    margin: 25% auto;
+    width: 100%;
+    padding-right: 15%;
+    justify-content: right;
+    color: var(--white);
+
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1000px) {
+    .panels {
+        flex-direction: column;
+    }
+
+    body, html {
+        font-size: 120%;
+    }
+
+    .panels #left-panel {
+        width: 100%;
+        height: 30%;
+    }
+
+    .panels #right-panel {
+        width: 100%;
+        height: 70%;
+        margin: 0;
+    }
+
+    .panels #right-panel .infos {
+        margin: auto;
+        width: 100%;
+        margin: 20% 5% 0% 5%;
+    }
+
+    .panels .date-container, .CVC-container {
+        margin-top: 0;
+    }
+    
+    .panels .infos .card-number-container, .name-container, .name-container {
+        margin-top: 0;
+    }
+    
+    .panels .container .label-title {
+        margin-bottom: 2%;
+    }
+    
+    .container input {
+        height: 80px;
+        width: 100%;
+        border-color: var(--light-violet);
+        border-radius: 15px;
+        font-size: 100%;
+    }
+
+    button {
+        height: 80px;
+        font-size: 100%;
+        border-radius: 15px;
+        margin-top: 4%;
+        margin-bottom: 0;
+    }
+
+    .error, .error-number, .format-flex {
+        color: var(--red);
+        font-size: 50%;
+        display: none;
+    }
+
+    .error-padding {
+        margin-top: 0%;
+    }
+    
+    .error-date {
+        margin-top: 0%;
+    }
+    
+    .error-CVC {
+        margin-top: 0%;
+    }
+
+    .cards {
+        position: relative;
+        bottom: 0;
+        top: -100%;
+        left: 5%;
+        width: 90%;
+        height: 35%;
+    }
+
+    .front-card {
+        height: auto;
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+        margin-bottom: 0;
+    }
+
+    .front-card .logos-card {
+        margin-bottom: 10%;
+    }
+
+    .front-card .logos-card img{
+        width: 17%;
+        height: auto;
+    }
+
+    .front-card .card-infos .card-nums {
+        font-size: 5vw;
+        letter-spacing: 20%;
+    }
+
+    .front-card .card-footer {
+        font-size: 2vw;
+        margin-top: 7%;
+        font-weight: 300;
+    }
+
+    .back-card {
+        height: auto;
+        width: 85%;
+    }
+
+    .back-card .CVC-back {
+        display: flex;
+        margin: 22% auto;
+        height: 10%;
+        width: 100%;
+        padding-right: 11%;
+        font-size: 4vw;
+    }
+}
+
+
+
+/*Only for mobile */
+
+@media (min-height: 1800px) {
+    body, html {
+        font-size : 160%;
+    }
+
+    .container input {
+        height: 150px;
+        border-radius: 30px;
+    }
+
+    button {
+        height: 160px;
+        font-size: 100%;
+        border-radius: 30px;
+    }
+}
